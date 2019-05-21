@@ -1,8 +1,17 @@
-craigslistScrape.py is a webscraper that can navigate to the craigslist
-site in a given area and can print a list of all objects found.
-After finishing collecting the information, the program prints
-a list of all prices, titles, and hrefs.
-The default location is Boise and would need to be altered to fit
-user's location.
-Can be easily be set up for daily auto-checks of craigslist via a simple
-script.
+craigslistScrape.py is a webscraper which uses requests lib and selenium 
+webdriver to navigate the craigslist website. Using an input string given 
+by the user, it retreives all possible matches from the site.
+The program prints a list of all prices, titles, and hrefs.
+
+Notes:
+Alter name of city at line 151 to search
+the desired city. Defualt location is Boise, ID.
+
+Alter line 23 to the absolute path of your chromedriver.exe for execution.
+
+Usage:
+From command line type (provided that environmental "python" variable set) 
+  python craigslistScraper.py
+  
+
+
