@@ -16,15 +16,13 @@ from selenium.common.exceptions import NoSuchElementException
 def query_url_retriever(url, queryIn, page_limit=None):
     #Controls headless Chrome browser
     opts = webdriver.ChromeOptions()
-    opts.add_argument("--headless")
-    opts.add_argument("--log-level=3")
-    opts.add_argument('--disable-gpu')
+    opts.add_argument("--headless") # remove this line to see interaction with webdriver
+    opts.add_argument("--log-level=3") # silences debug output from chomedriver
 
     #accesss the website
-    driver = webdriver.Chrome("C:/Users/Landon Lemieux/chromedriver.exe", chrome_options=opts)
+    driver = webdriver.Chrome(ATTENTION!! INSERT PATH TO CHROMEDRIVER HERE, chrome_options=opts) #insert relative path to chromedriver.exe
     driver.get(url)
-    print("\nGetting Web Page(s) \nThis may take a second if you're too cheap to " +
-             "pay for decent internet speed.\n")
+    print("\nGetting Web Page(s) \nGathering Web Pages. Please wait...\n")
 
     #find query box and enter query input
     queryBox = driver.find_element_by_name('query')
@@ -148,7 +146,7 @@ if __name__ == '__main__':
     ret_urls = []
     ret_info = []
     page_count = 0
-    url = 'https://boise.craigslist.org/'
+    url = 'https://boise.craigslist.org/' #alter url for desired location
     orig_query = str(input("Enter query to be searched: "))
     max_page = str(input("There are 120 results per page, Enter maximum number of pages to be searched \n"
     + "(NOTE: if you have no desired amount, leave this entry blank):"))
@@ -167,6 +165,5 @@ if __name__ == '__main__':
                 print(index,"\t", '{:20s}{:40s}{}'.format(*j))
                 index+=1
         else:
-            print("\nSorry, there were no results for the query you searched :(\n"
-            +"you should probably just kill yourself, your life is a hopeless waste of existence.\n")
+            print("\nSorry, there were no results for the query you searched :(\n")
     print("*"*80)
