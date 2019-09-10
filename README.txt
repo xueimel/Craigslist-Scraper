@@ -12,4 +12,5 @@ Alter line 23 to the absolute path of your chromedriver.exe for execution.
 Usage:
 From command line type (provided that environmental "python" variable set) 
   python craigslistScraper.py
-  
+ 
+
