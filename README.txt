@@ -13,5 +13,3 @@ Usage:
 From command line type (provided that environmental "python" variable set) 
   python craigslistScraper.py
   
-
-
